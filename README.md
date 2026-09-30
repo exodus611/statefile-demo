@@ -102,4 +102,15 @@ That is the whole setup. From then on the badge in your README tells the truth a
 
 ---
 
+## How it works
+
+![How statefile works](docs/how-it-works.svg)
+
+Your project keeps two files that matter to an assistant: **state** (`STATE.md`) and **rules**
+(`CLAUDE.md`). The check reads them and the surrounding git history — it never walks your code,
+never installs anything and never sends anything anywhere. It runs by hand in one command, or in
+CI on every push, which is what produces the badge above.
+
+---
+
 *The tool: [exodus611/statefile](https://github.com/exodus611/statefile). The method behind it — rules versus state, and the three levels of checking that keep a state file from rotting into confident nonsense — is in **Never Start from Scratch**: <https://exodus611.github.io/>.*
