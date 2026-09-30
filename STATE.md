@@ -1,6 +1,6 @@
 # State
 
-> Last real update: nobody remembers. The dates say 47 days.
+> Updated today. Five sections. Nothing in here is a secret.
 
 ## Now — what runs
 
@@ -10,15 +10,21 @@
 
 ## In flight
 
-- last month we started moving the price source from provider A to provider B.
-  The branch is `prices-v2`. Whether it was finished, abandoned or half-merged
-  is not written down anywhere, and the person who started it is the same person
-  reading this line.
+- nothing in flight right now. The provider B move is finished and merged (see below)
 
 ## Decisions
 
 - one state file, not a folder — because the assistant has to find it in one guess
+- provider B instead of A — because A has no intraday endpoint and we needed one for the 07:00 job
 
-<!-- TODO: add dead ends and the next tasks. forgot again. -->
+## Dead ends — do not repeat
 
-deploy: {{ secrets.DEPLOY_TOKEN }}
+- cron inside the web app: the process restarts on every deploy, so the job died silently
+- provider A for intraday prices: no endpoint, two weeks lost
+- branch `prices-v2`: merged and then reverted in July (rate limits). It is not a thing to continue
+
+## Next three tasks
+
+1. add the stale-data warning to the dashboard
+2. write the results of the last 30 days into `results.json` retroactively
+3. decide whether the Slack summary should link to the dashboard
