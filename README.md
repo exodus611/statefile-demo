@@ -46,17 +46,17 @@ python3 statefile.py check
 
 ```
 state file: STATE.md
-[FAIL] STATE_STALE: STATE.md has not changed in 47 days (limit 14).
-         fix: Update it before the next session, or raise --max-age-days.
-[FAIL] SECRET_IN_STATE: unfilled template value at STATE.md:22 — deploy: {{ secrets.DEPLOY_TOKEN }}
-         fix: Remove it and rotate the value. Never keep secrets in a state file.
 [WARN] STATE_SECTIONS: STATE.md is missing sections: dead ends, next
          fix: Add the missing headings, even as placeholders.
+[FAIL] STATE_STALE: STATE.md has not changed in 47 days (limit 14).
+         fix: Update it before the next session, or raise --max-age-days.
+[FAIL] SECRET_IN_STATE: unfilled template value at STATE.md:24 — deploy: {{ secrets.DEPLOY_TOKEN }}
+         fix: Remove it and rotate the value. Never keep secrets in a state file.
 [WARN] RULE_ANTIPATTERN: CLAUDE.md:3 — verification ritual: the model already self-corrects — Always double-check your work before responding.
          fix: Delete the line, or say what you want done instead of how hard to try.
-[WARN] RULE_ANTIPATTERN: CLAUDE.md:4 — reasoning scaffold: frontier models reason natively — Think step by step.
+[WARN] RULE_ANTIPATTERN: CLAUDE.md:5 — reasoning scaffold: frontier models reason natively — Think step by step.
          fix: Delete the line, or say what you want done instead of how hard to try.
-[WARN] RULE_ANTIPATTERN: CLAUDE.md:5 — pressure language: turns into noise, not signal — CRITICAL: YOU MUST ALWAYS run the full test suite and never ask questions.
+[WARN] RULE_ANTIPATTERN: CLAUDE.md:7 — pressure language: turns into noise, not signal — CRITICAL: YOU MUST ALWAYS run the full test suite before every commit and never
          fix: Delete the line, or say what you want done instead of how hard to try.
 result: failed
 ```
